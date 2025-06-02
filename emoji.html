@@ -1,0 +1,17 @@
+<!-- emoji.html -->
+<html>
+  <head>
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js';
+      window.onload = () => {
+        const picker = document.querySelector("emoji-picker");
+        picker.addEventListener("emoji-click", (event) => {
+          window.parent.postMessage(event.detail.unicode, "*");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <emoji-picker></emoji-picker>
+  </body>
+</html>
